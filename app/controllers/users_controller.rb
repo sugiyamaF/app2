@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def show
     @user = User.find(params[:id])
     @post_images = @user.post_images.page(params[:page])
@@ -8,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-   def update
+  def update
     @user = User.find(params[:id])
     @user.update(user_params)
     redirect_to user_path(@user)
